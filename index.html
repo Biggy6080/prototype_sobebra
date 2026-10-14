@@ -347,6 +347,122 @@
     .disc-dis a.green:hover { background: var(--primary); color: white; transform: translateY(-2px); }
 
     /* =========================================
+       TÉMOIGNAGES (AVEC SUPPORT MÉDIA)
+       ========================================= */
+    .testimonials-section {
+      padding: 80px 0;
+      background: var(--bg-surface);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-body);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden; /* Important pour que le média respecte les bords arrondis */
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-light);
+    }
+
+    /* Gestion du média (Image ou Vidéo) */
+    .testimonial-media {
+      width: 100%;
+      aspect-ratio: 16 / 9; /* Force un format vidéo/cinéma propre */
+      background: var(--border-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-media img,
+    .testimonial-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* L'image/vidéo remplit la zone sans être déformée */
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    /* Petit effet de zoom sur le média au survol de la carte */
+    .testimonial-card:hover .testimonial-media img,
+    .testimonial-card:hover .testimonial-media video {
+      transform: scale(1.05);
+    }
+
+    /* Contenu texte */
+    .testimonial-content {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1; /* Pousse le contenu pour remplir l'espace restant */
+    }
+
+    .quote-icon {
+      color: var(--primary);
+      margin-bottom: 16px;
+      opacity: 0.6;
+    }
+
+    .testimonial-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-main);
+      margin-bottom: 24px;
+      flex: 1; /* Assure que les blocs auteurs sont alignés en bas même si les textes ont des longueurs différentes */
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-top: 1px solid var(--border-light);
+      padding-top: 20px;
+      margin-top: auto; /* Force l'auteur tout en bas de la carte */
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .author-name {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 1rem;
+    }
+
+    .author-role {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Responsive pour les témoignages */
+    @media (max-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .testimonial-content {
+        padding: 24px;
+      }
+    }
+
+    /* =========================================
        7. ACTIVITÉS & MARQUES
        ========================================= */
     .last-activites { padding: 80px 0 100px; }
@@ -719,6 +835,79 @@
                 <a href="/la-distribution/">Découvrir</a>
                 <a href="/devenir-fournisseurs/" class="green">Devenir distributeur</a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TÉMOIGNAGES -->
+        <section class="testimonials-section">
+          <div class="container">
+            <div class="sr-intro-section" data-aos="fade-down">
+              <img src="https://www.sobebra.bj/app/themes/sob/static_assets/images/icon-sobebra.png" alt="Icône Sobebra">
+              <h2>Ils nous font confiance</h2>
+              <span>Découvrez les retours de nos partenaires distributeurs et consommateurs</span>
+            </div>
+            
+            <div class="testimonials-grid">
+              
+              <!-- TÉMOIGNAGE 1 : Avec Vidéo (Ex: un distributeur qui filme son entrepôt) -->
+              <div class="testimonial-card has-media" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-media">
+                  <!-- Remplacer par ta vraie vidéo ou un iframe YouTube -->
+                  <video controls poster="https://www.sobebra.bj/app/uploads/2025/04/distributeur.png" playsinline>
+                    <source src="chemin-vers-ta-video.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la vidéo.
+                  </video>
+                </div>
+                <div class="testimonial-content">
+                  <div class="quote-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+                  </div>
+                  <p class="testimonial-text">"La régularité des livraisons et la qualité des produits SOBEBRA font de nous un distributeur fier de représenter la marque. Un partenaire de confiance au quotidien."</p>
+                  <div class="testimonial-author">
+                    <div class="author-info">
+                      <span class="author-name">Jean-Marc D.</span>
+                      <span class="author-role">Distributeur agréé, Cotonou</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TÉMOIGNAGE 2 : Texte seul (Le design s'adapte automatiquement) -->
+              <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-content">
+                  <div class="quote-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+                  </div>
+                  <p class="testimonial-text">"J'adore le nouveau Valmont ! Le format 50cl est super pratique pour les repas en famille et le goût est vraiment authentique. C'est devenu mon vin de table préféré."</p>
+                  <div class="testimonial-author">
+                    <div class="author-info">
+                      <span class="author-name">Amina S.</span>
+                      <span class="author-role">Consommatrice fidèle</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TÉMOIGNAGE 3 : Avec Image (Ex: photo du fournisseur ou d'un événement) -->
+              <div class="testimonial-card has-media" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-media">
+                  <img src="https://www.sobebra.bj/app/uploads/2025/04/nos-politiques-min1.jpg" alt="Partenariat SOBEBRA" loading="lazy">
+                </div>
+                <div class="testimonial-content">
+                  <div class="quote-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+                  </div>
+                  <p class="testimonial-text">"En tant que fournisseur, j'apprécie la transparence et le professionnalisme de la direction de la SOBEBRA. Une collaboration qui dure et qui porte ses fruits."</p>
+                  <div class="testimonial-author">
+                    <div class="author-info">
+                      <span class="author-name">Koffi A.</span>
+                      <span class="author-role">Fournisseur partenaire</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
