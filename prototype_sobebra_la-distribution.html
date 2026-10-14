@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>La Distribution – SOBEBRA</title>
+  <meta name="robots" content="max-image-preview:large">
+  
+  <!-- Ressources externes essentielles -->
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://www.sobebra.bj/wp/wp-includes/css/dist/block-library/style.min.css">
+  
+  <link rel="canonical" href="https://www.sobebra.bj/la-distribution/">
+  <link rel="icon" href="https://www.sobebra.bj/app/uploads/2025/03/cropped-icon-sobebra-32x32.png" sizes="32x32">
+
+  <style>
+    /* =========================================
+       1. VARIABLES & RESET
+       ========================================= */
+    :root {
+      --primary: #0A6535;
+      --primary-dark: #064a26;
+      --primary-light: #e6f0eb;
+      --accent: #D4AF37;
+      --bg-body: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --border-light: #E2E8F0;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 10px 30px -5px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 40px -10px rgba(0,0,0,0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --container-width: 1280px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    ul { list-style: none; }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* =========================================
+       2. TOP BAR & HEADER
+       ========================================= */
+    .top-promo-bar {
+      background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #FFFFFF;
+      padding: 12px 0;
+      position: relative;
+      z-index: 1002;
+      animation: slideDownPromo 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes slideDownPromo { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    .promo-container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .promo-content { display: flex; align-items: center; gap: 16px; flex: 1; }
+    .promo-icon svg { width: 24px; height: 24px; color: var(--accent); flex-shrink: 0; }
+    .promo-text { font-size: 0.9rem; font-weight: 500; color: rgba(255, 255, 255, 0.9); }
+    .promo-text strong { font-weight: 700; color: #FFFFFF; }
+
+    .promo-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #FFFFFF; color: var(--primary);
+      padding: 8px 20px; border-radius: 50px;
+      font-weight: 700; font-size: 0.85rem; white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .promo-cta:hover { background: var(--accent); color: var(--text-main); transform: translateY(-2px); }
+    .promo-cta svg { width: 16px; height: 16px; transition: transform 0.3s ease; }
+    .promo-cta:hover svg { transform: translateX(4px); }
+
+    .promo-close {
+      background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.8); cursor: pointer; padding: 6px;
+      display: flex; align-items: center; justify-content: center; border-radius: 50%;
+      transition: var(--transition); flex-shrink: 0;
+    }
+    .promo-close:hover { background: rgba(255, 255, 255, 0.2); color: #FFFFFF; transform: rotate(90deg); }
+    .promo-close svg { width: 18px; height: 18px; }
+
+    .modern-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .bar-menu { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .sr-logo img { height: 50px; width: auto; transition: var(--transition); }
+    .sr-logo img:hover { transform: scale(1.02); }
+
+    #mainmenu ul { display: flex; gap: 32px; align-items: center; }
+    #mainmenu ul > li > a { font-size: 0.95rem; font-weight: 600; color: var(--text-main); position: relative; padding: 8px 0; }
+    #mainmenu ul > li > a::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+      background: var(--primary); transition: var(--transition);
+    }
+    #mainmenu ul > li > a:hover::after, #mainmenu ul > li.current-menu-item > a::after { width: 100%; }
+    #mainmenu ul > li > a:hover { color: var(--primary); }
+
+    #mainmenu .sub-menu {
+      position: absolute; top: 100%; left: 0; background: var(--bg-surface);
+      min-width: 260px; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);
+      padding: 12px; opacity: 0; visibility: hidden; transform: translateY(10px);
+      transition: var(--transition); border: 1px solid var(--border-light); z-index: 100;
+    }
+    #mainmenu li:hover > .sub-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+    #mainmenu .sub-menu li a {
+      display: block; padding: 10px 16px; font-size: 0.9rem; color: var(--text-muted);
+      border-radius: var(--radius-sm);
+    }
+    #mainmenu .sub-menu li a:hover { background: var(--primary-light); color: var(--primary); }
+
+    .btn-search { cursor: pointer; padding: 8px; border-radius: 50%; transition: var(--transition); }
+    .btn-search:hover { background: var(--primary-light); }
+    .btn-search img { width: 20px; height: 20px; }
+    .link-rs ul { display: flex; gap: 12px; }
+    .link-rs a img { width: 24px; height: 24px; opacity: 0.7; transition: var(--transition); }
+    .link-rs a:hover img { opacity: 1; transform: translateY(-2px); }
+
+    .bar-search {
+      position: fixed; top: 0; left: 0; width: 100%; height: 80px;
+      background: var(--bg-surface); display: flex; align-items: center; justify-content: center;
+      transform: translateY(-100%); transition: var(--transition); z-index: 1001; box-shadow: var(--shadow-md);
+    }
+    .bar-search.active { transform: translateY(0); }
+    .bar-search .search-form { display: flex; width: 100%; max-width: 600px; }
+    .bar-search .search-field {
+      flex: 1; padding: 12px 24px; border: 2px solid var(--border-light);
+      border-radius: var(--radius-md) 0 0 var(--radius-md); font-size: 1rem; outline: none;
+    }
+    .bar-search .search-field:focus { border-color: var(--primary); }
+    .bar-search input[type="submit"] {
+      background: var(--primary); color: white; border: none; padding: 0 32px;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0; cursor: pointer; font-weight: 600;
+    }
+    .ico-close {
+      position: absolute; right: 40px; width: 32px; height: 32px; cursor: pointer;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="%230F172A"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>') no-repeat center;
+    }
+
+    /* =========================================
+       3. HERO SPÉCIAL VALMONT
+       ========================================= */
+    .valmont-hero {
+      position: relative; width: 100%; min-height: 85vh;
+      background: linear-gradient(135deg, #0F172A 0%, #1a0a0e 40%, #c22525 100%);
+      display: flex; align-items: center; overflow: hidden; padding: 0;
+    }
+    .hero-ambient-glow {
+      position: absolute; top: -20%; right: -10%; width: 60vw; height: 60vw;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+      pointer-events: none; z-index: 1;
+    }
+    .hero-container {
+      position: relative; z-index: 10; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center; width: 100%; max-width: var(--container-width); margin: 0 auto; padding: 0 24px;
+    }
+    .hero-content { display: flex; flex-direction: column; gap: 24px; }
+    .hero-badge {
+      display: inline-block; align-self: flex-start; background: rgba(212, 175, 55, 0.15);
+      color: var(--accent); border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; animation: fadeInDown 1s ease-out forwards;
+    }
+    .hero-title {
+      color: #FFFFFF; font-size: 4rem; font-weight: 800; line-height: 1.1; margin: 0;
+      animation: fadeInUp 1s ease-out 0.2s forwards; opacity: 0;
+    }
+    .title-line { display: block; font-size: 1.5rem; font-weight: 400; color: rgba(255, 255, 255, 0.7); margin-bottom: 8px; }
+    .title-highlight { color: #FFFFFF; text-shadow: 0 4px 20px rgba(212, 175, 55, 0.3); }
+
+    .glass-card {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1); border-left: 3px solid var(--accent);
+      border-radius: 5px 16px; padding: 16px 24px; max-width: 420px; opacity: 0;
+    }
+    .glass-card svg { flex-shrink: 0; }
+    .glass-card p { color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; }
+    .float-anim-1 { animation: fadeInUp 0.8s ease-out 0.4s forwards, float 4s ease-in-out infinite; }
+    .float-anim-2 { animation: fadeInUp 0.8s ease-out 0.6s forwards, float 5s ease-in-out 1s infinite; }
+
+    .hero-cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+      background: var(--accent); color: #0F172A; padding: 16px 32px; border-radius: 50px;
+      font-size: 1rem; font-weight: 800; text-decoration: none; width: fit-content;
+      transition: var(--transition); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      animation: fadeInUp 0.8s ease-out 0.8s forwards; opacity: 0;
+    }
+    .hero-cta:hover { background: #FFFFFF; transform: translateY(-4px) scale(1.02); }
+    .hero-cta svg { transition: transform 0.3s ease; }
+    .hero-cta:hover svg { transform: translateX(6px); }
+
+    .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; height: 100%; }
+    .product-glow {
+      position: absolute; width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(10, 101, 53, 0.6) 0%, transparent 70%);
+      border-radius: 50%; z-index: 1; animation: pulseGlow 4s ease-in-out infinite;
+    }
+    .hero-bottle {
+      position: relative; z-index: 2; width: auto; 
+      filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.5));
+      animation: floatBottle 6s ease-in-out infinite;
+    }
+
+    /* =========================================
+       3. PAGE DISTRIBUTION : LAYOUT GLOBAL
+       ========================================= */
+    .distribution-page { padding: 80px 0 100px; }
+    .distribution-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* =========================================
+       4. BARRE LATÉRALE (SIDEBAR)
+       ========================================= */
+    .dist-sidebar {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sidebar-block {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .sidebar-block h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin: 0 0 16px 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--bg-body);
+    }
+
+    .sidebar-search-form { display: flex; gap: 8px; }
+    .sidebar-search-form .search-field {
+      flex: 1; padding: 10px 6px; border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm); font-size: 0.9rem; outline: none;
+    }
+    .sidebar-search-form .search-field:focus { border-color: var(--primary); }
+    .sidebar-search-form button {
+      background: var(--primary); color: white; border: none; border-radius: var(--radius-sm);
+      width: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer;
+    }
+
+    .sidebar-links { display: flex; flex-direction: column; gap: 4px; }
+    .sidebar-links li a {
+      display: block; padding: 10px 14px; color: var(--text-main); font-size: 0.95rem;
+      font-weight: 500; border-radius: var(--radius-sm); border-left: 3px solid transparent;
+    }
+    .sidebar-links li a:hover, .sidebar-links li a.active {
+      background: var(--primary-light); color: var(--primary); border-left-color: var(--primary); font-weight: 600;
+    }
+
+    .social-icons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .social-icons a {
+      width: 40px; height: 40px; background: var(--bg-body); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center; transition: var(--transition);
+    }
+    .social-icons a:hover { background: var(--primary); transform: translateY(-3px); }
+    .social-icons a img { width: 20px; height: 20px; filter: grayscale(100%) opacity(0.7); transition: var(--transition); }
+    .social-icons a:hover img { filter: grayscale(0%) opacity(1) brightness(0) invert(1); }
+
+    /* =========================================
+       5. CONTENU PRINCIPAL & TABLEAU (CORRECTION DÉFINITIVE)
+       ========================================= */
+    .dist-header { margin-bottom: 32px; }
+    .dist-header h1 { font-size: 2rem; font-weight: 800; color: var(--text-main); margin: 0 0 16px 0; }
+    .dist-intro {
+      font-size: 1.1rem; color: var(--text-muted); line-height: 1.7; margin: 0;
+      padding-left: 20px; border-left: 4px solid var(--accent);
+    }
+
+    /* Conteneur du tableau : gestion stricte du débordement */
+    .table-responsive-wrapper {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      padding: 20px;
+      width: 100%;
+      overflow-x: auto; /* Défilement horizontal fluide */
+      -webkit-overflow-scrolling: touch; /* Défilement fluide sur iOS */
+    }
+
+    
+
+        /* 1. Forcer l'affichage en flexbox des contrôles générés (écrase le style="display: inline" du plugin) */
+    #for_numrows,
+    #for_filter_by {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      margin-bottom: 20px !important;
+      flex-wrap: wrap !important;
+    }
+
+    /* Style des labels "Afficher" et "Filter by" */
+    #for_numrows label,
+    #for_filter_by label {
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      color: var(--text-muted) !important;
+      margin: 0 !important;
+    }
+
+    /* 2. Style des sélecteurs (Select) générés par le plugin */
+    #for_numrows select,
+    #for_filter_by select {
+      padding: 10px 36px 10px 14px !important;
+      border: 1px solid var(--border-light) !important;
+      border-radius: var(--radius-sm) !important;
+      background-color: var(--bg-surface) !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+      background-repeat: no-repeat !important;
+      background-position: right 12px center !important;
+      background-size: 16px !important;
+      font-size: 0.9rem !important;
+      color: var(--text-main) !important;
+      cursor: pointer !important;
+      outline: none !important;
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      appearance: none !important;
+    }
+
+    #for_numrows select:focus,
+    #for_filter_by select:focus {
+      border-color: var(--primary) !important;
+    }
+
+    /* 3. Style du champ de recherche généré par le plugin */
+    #for_filter_by input[type="text"] {
+      padding: 10px 14px 10px 38px !important;
+      border: 1px solid var(--border-light) !important;
+      border-radius: var(--radius-sm) !important;
+      font-size: 0.9rem !important;
+      color: var(--text-main) !important;
+      outline: none !important;
+      background-color: var(--bg-surface) !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E") !important;
+      background-repeat: no-repeat !important;
+      background-position: 12px center !important;
+      background-size: 16px !important;
+    }
+
+    #for_filter_by input[type="text"]:focus {
+      border-color: var(--primary) !important;
+    }
+
+    /* 4. Style de la pagination générée par le plugin */
+    .pagesControllers {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 8px !important;
+      margin-top: 32px !important;
+      flex-wrap: wrap !important;
+    }
+
+        .pagecontroller {
+      min-width: 40px !important;
+      height: 40px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border: 1px solid var(--border-light) !important;
+      background: var(--bg-surface) !important;
+      color: var(--text-muted) !important;
+      border-radius: var(--radius-sm) !important;
+      font-size: 0.9rem !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+      transition: var(--transition) !important;
+    }
+
+    .pagecontroller:hover:not(.currentPage) {
+      border-color: var(--primary) !important;
+      color: var(--primary) !important;
+      background: var(--primary-light) !important;
+    }
+
+    .pagecontroller.currentPage {
+      background: var(--primary) !important;
+      color: #FFFFFF !important;
+      border-color: var(--primary) !important;
+      box-shadow: 0 4px 12px rgba(10, 101, 53, 0.3) !important;
+    }
+
+
+    /* Tableau : largeur minimale pour forcer le scroll sur mobile, mais pas trop grande */
+    .modern-table { 
+      width: 100%; 
+      min-width: 650px; /* Suffisant pour 5 colonnes lisibles */
+      border-collapse: collapse; 
+    }
+    
+    .modern-table thead { background: var(--bg-body); border-bottom: 2px solid var(--border-light); }
+    .modern-table th {
+      padding: 14px 16px; text-align: left; font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); cursor: pointer;
+      white-space: nowrap; /* Les titres de colonnes restent sur une ligne */
+    }
+    .modern-table th.sortingAsc, .modern-table th:hover { background: #F1F5F9; color: var(--primary); }
+    
+    .modern-table td {
+      padding: 14px 16px; font-size: 0.9rem; color: var(--text-main);
+      border-bottom: 1px solid var(--border-light); vertical-align: middle;
+      /* CRUCIAL : Permet aux longs textes de passer à la ligne */
+      word-wrap: break-word;
+      word-break: break-word;
+      white-space: normal;
+      hyphens: auto;
+      max-width: 150px;
+    }
+    
+    .modern-table tbody tr { transition: background 0.2s ease; }
+    .modern-table tbody tr:hover { background: var(--primary-light); }
+    .modern-table tbody tr:last-child td { border-bottom: none; }
+
+    .region-badge {
+      display: inline-block; background: var(--bg-body); color: var(--text-muted);
+      padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; 
+      white-space: normal; /* Permet au badge de s'adapter */
+      max-width: 100%;
+    }
+    .just-for-search { display: none !important; }
+
+        /* =========================================
+       10. ANIMATIONS KEYFRAMES
+       ========================================= */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+    @keyframes floatBottle { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-20px) rotate(1deg); } }
+    @keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.1); opacity: 0.8; } }
+
+    /* =========================================
+       6. RESPONSIVE (Correction des débordements)
+       ========================================= */
+    
+    /* Tablettes et petits laptops */
+    @media (max-width: 992px) {
+      .distribution-layout { grid-template-columns: 1fr; }
+      .dist-sidebar {
+        position: static;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;
+      }
+      .sidebar-block { margin-bottom: 0; }
+      .hero-container { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+      .hero-content { align-items: center; }
+      .hero-title { font-size: 3rem; }
+      .glass-card { max-width: 100%; text-align: left; }
+      .hero-bottle { max-height: 50vh; }
+      .product-glow { width: 250px; height: 250px; }
+      .content-footer-menu { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* Mobile standard (max 768px) */
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+      .valmont-hero { padding: 60px 0; min-height: auto; }
+      .hero-title { font-size: 2.5rem; }
+      .title-line { font-size: 1.1rem; }
+      .glass-card { padding: 12px 16px; gap: 12px; }
+      .glass-card p { font-size: 0.85rem; }
+      
+      .hero-cta-group { flex-direction: column !important; width: 100%; }
+      .hero-cta-group .hero-cta { width: 100%; justify-content: center; }
+
+      .dist-sidebar { grid-template-columns: 1fr !important; }
+      
+      /* TABLEAU MOBILE : On force tout à la ligne */
+      .table-responsive-wrapper { padding: 12px; }
+      
+      #for_numrows, #for_filter_by {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        gap: 12px !important;
+        margin-bottom: 16px !important;
+      }
+      
+      #for_numrows label, #for_filter_by label {
+        margin-bottom: 4px !important;
+      }
+      
+      #for_numrows select, 
+      #for_filter_by select, 
+      #for_filter_by input[type="text"] {
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .modern-table th, .modern-table td { padding: 10px 12px; font-size: 0.85rem; }
+      
+      .pagesControllers {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        margin-top: 20px !important;
+      }
+      
+      .pagecontroller {
+        min-width: 36px !important;
+        height: 36px !important;
+        font-size: 0.8rem !important;
+      }
+
+      /* Footer mobile */
+      .sr-footer-links { grid-template-columns: 1fr; gap: 32px; }
+      .content-copyright { flex-direction: column; text-align: center; }
+      .company p { text-align: center; }
+      .sr-footer-logo { text-align: center; }
+      .sr-footer-logo .notification { 
+        border-left: none; border-top: 3px solid var(--accent); 
+        padding-top: 16px; padding-left: 0; 
+      }
+    }
+
+    /* Très petits écrans (300px - 360px) */
+    @media (max-width: 360px) {
+      .container { padding: 0 12px; }
+      .hero-title { font-size: 2rem; }
+      .title-line { font-size: 1rem; }
+      .hero-badge { font-size: 0.75rem; padding: 6px 14px; }
+      .dist-header h1 { font-size: 1.5rem; }
+      .dist-intro { font-size: 0.9rem; padding-left: 12px; }
+      .sr-box-links h5 { font-size: 1rem; }
+      .sr-box-links ul li a { font-size: 0.9rem; }
+    }
+
+        /* =========================================
+       8. FOOTER
+       ========================================= */
+    footer { background: #0F172A; color: #CBD5E1; padding-top: 80px; }
+    .sr-footer-menu { padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .content-footer-menu { display: grid; grid-template-columns: 1.5fr 2fr; gap: 64px; }
+    .sr-footer-logo img { height: 60px; margin-bottom: 24px; filter: brightness(0) invert(1); }
+    .sr-footer-logo .notification { font-size: 1rem; line-height: 1.6; color: #94A3B8; border-left: 3px solid var(--accent); padding-left: 16px; }
+    .sr-footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .sr-box-links h5 { color: white; font-size: 1.125rem; font-weight: 700; margin-bottom: 24px; position: relative; padding-bottom: 12px; }
+    .sr-box-links h5::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--primary); border-radius: 2px; }
+    .sr-box-links ul li { margin-bottom: 12px; }
+    .sr-box-links ul li a { color: #94A3B8; font-size: 0.95rem; transition: var(--transition); display: inline-block; }
+    .sr-box-links ul li a:hover { color: white; transform: translateX(4px); }
+    .sr-footer-copyright { padding: 32px 0; font-size: 0.875rem; }
+    .content-copyright { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .copyright p, .company p { color: #64748B; }
+    .company p { text-align: right; }
+
+  </style>
+</head>
+
+<body class="home wp-singular page-template page-front page-id-70" data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+
+  <!-- TOP BAR PROMOTIONNELLE -->
+  <div class="top-promo-bar" id="topPromoBar">
+    <div class="container promo-container">
+      <div class="promo-content">
+        <span class="promo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </span>
+        <p class="promo-text"><strong>Rejoignez le réseau SOBEBRA :</strong> Vous souhaitez distribuer nos produits et grandir avec nous ?</p>
+        <a href="https://www.sobebra.bj/devenir-fournisseurs/" class="promo-cta">
+          Devenir Distributeur
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <button class="promo-close" aria-label="Fermer cette annonce" onclick="closePromoBar()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="modern-header">
+    <div class="container container-menu">
+      <div class="bar-menu">
+        <div class="sr-logo">
+          <a href="/">
+            <img src="https://www.sobebra.bj/app/uploads/2025/02/logo.png" alt="soberbo">
+          </a>
+        </div>
+        <div class="menu-row">
+          <div class="menu-box">
+            <div id="mainmenu">
+              <div class="menu-main-menu-container">
+                <ul id="menu-main-menu" class="menu">
+                  <li id="menu-item-84" class="menu-item current-menu-item"><a href="./prototype_sobebra.html" aria-current="page">Accueil</a></li>
+                  <li id="menu-item-260" class="menu-item menu-item-has-children megamenu"><a href="#">La Sobebra</a>
+                    <ul class="sub-menu">
+                      <li id="menu-item-262" class="menu-item"><a href="https://www.sobebra.bj/notre-histoire/">Notre histoire</a></li>
+                      <li id="menu-item-346" class="menu-item"><a href="https://www.sobebra.bj/castel/">Castel</a></li>
+                      <li id="menu-item-274" class="menu-item"><a href="https://www.sobebra.bj/devenir-fournisseurs/">Devenir fournisseur</a></li>
+                      <li id="menu-item-304" class="menu-item menu-item-has-children megamenu"><a href="#">Nos politiques</a>
+                        <ul class="sub-menu">
+                          <li id="menu-item-303" class="menu-item"><a href="https://www.sobebra.bj/politique-culture-et-securite-des-denrees-alimentaires/">Politique Culture et sécurité des denrées alimentaires</a></li>
+                          <li id="menu-item-307" class="menu-item"><a href="https://www.sobebra.bj/politique-et-engagement-de-la-direction-energie/">Politique et engagement de la Direction : Energie</a></li>
+                          <li id="menu-item-350" class="menu-item"><a href="https://www.sobebra.bj/politique-et-engagement-de-la-direction-qualite-sante-et-securite-environnement/">Politique et engagement de la Direction Qualité / Santé et Sécurité/ Environnement</a></li>
+                        </ul>
+                      </li>
+                      <!-- <li id="menu-item-228" class="menu-item"><a href="https://www.sobebra.bj/la-distribution/">La Distribution</a></li> -->
+                      <li id="menu-item-228" class="menu-item"><a href="./prototype_sobebra_la-distribution.html">La Distribution</a></li>
+                    </ul>
+                  </li>
+                  <li id="menu-item-135" class="menu-item menu-item-has-children megamenu"><a href="https://www.sobebra.bj/nos-produits/">Nos produits</a>
+                    <ul class="sub-menu">
+                      <li id="menu-item-508" class="menu-item"><a href="https://www.sobebra.bj/nos-produits/?cat=nos-bieres">Nos Bières</a></li>
+                      <li id="menu-item-395" class="menu-item"><a href="https://www.sobebra.bj/nos-produits/?cat=les-boissons-gazeuses">Nos boissons gazeuses</a></li>
+                      <li id="menu-item-399" class="menu-item"><a href="https://www.sobebra.bj/nos-produits/?cat=les-eaux">Nos Eaux</a></li>
+                      <li id="menu-item-398" class="menu-item"><a href="https://www.sobebra.bj/nos-produits/?cat=les-boissons-energisantes">Nos boissons energisantes</a></li>
+                      <li id="menu-item-552" class="menu-item"><a href="https://www.sobebra.bj/nos-produits/?cat=nos-alcool-mix">Nos alcools mix</a></li>
+                      <li id="menu-item-400" class="menu-item"><a href="https://www.sobebra.bj/nos-produits/?cat=nos-panaches">Nos boissons panachées</a></li>
+                    </ul>
+                  </li>
+                  <li id="menu-item-208" class="menu-item"><a href="https://www.sobebra.bj/nos-activites/">Nos activités</a></li>
+                  <li id="menu-item-279" class="menu-item menu-item-has-children megamenu"><a href="#">Notre engagement RSE</a>
+                    <ul class="sub-menu">
+                      <li id="menu-item-287" class="menu-item"><a href="https://www.sobebra.bj/politique-rse/">Politique RSE</a></li>
+                      <li id="menu-item-923" class="menu-item"><a href="https://www.sobebra.bj/nos-activites-rse/">Nos activités RSE</a></li>
+                      <li id="menu-item-310" class="menu-item"><a href="https://www.sobebra.bj/appel-a-laide-sociale/">Appel à l’aide sociale</a></li>
+                    </ul>
+                  </li>
+                  <li id="menu-item-280" class="menu-item menu-item-has-children megamenu"><a href="#">Carrières</a>
+                    <ul class="sub-menu">
+                      <li id="menu-item-518" class="menu-item"><a href="https://www.sobebra.bj/pourquoi-nous-rejoindre/">Pourquoi nous rejoindre ?</a></li>
+                      <li id="menu-item-247" class="menu-item"><a href="https://www.sobebra.bj/carrieres/">Offres d’emplois</a></li>
+                      <li id="menu-item-258" class="menu-item"><a href="https://www.sobebra.bj/candidature/">Candidature spontanée</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-search">
+          <i><img src="https://www.sobebra.bj/app/themes/sob/static_assets/images/search-icon-darck.svg" alt=""></i>
+        </div>
+        <div class="bar-search">
+          <div class="ico-close"></div>
+          <form role="search" method="get" class="search-form" action="https://www.sobebra.bj/">
+            <input type="text" class="search-field" value="" name="s" placeholder="Votre recherche ...">
+            <input type="submit" value="Rechercher">
+          </form>
+        </div>
+        <div class="link-rs">
+          <ul>
+            <li><a class="Facebook" href="https://www.facebook.com/sobebrabenin/?_rdc=1&amp;_rdr" target="_blank"><img src="https://www.sobebra.bj/app/uploads/2025/04/facebook.svg" alt="Facebook"></a></li>
+            <li><a class="LinkedIn" href="https://www.linkedin.com/company/11031043" target="_blank"><img src="https://www.sobebra.bj/app/uploads/2025/04/linkedin.svg" alt="LinkedIn"></a></li>
+            <li><a class="Instagram" href="https://www.instagram.com/sobebrabenin/" target="_blank"><img src="https://www.sobebra.bj/app/uploads/2025/04/instagram-1.svg" alt="Instagram"></a></li>
+            <li><a class="X" href="https://x.com/SobebraBJ" target="_blank"><img src="https://www.sobebra.bj/app/uploads/2025/04/twitter.svg" alt="X"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- HERO SPÉCIAL VALMONT -->
+    <section class="valmont-hero">
+      <div class="hero-ambient-glow"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-badge">Nouveau • 1000 FCFA</span>
+          <h1 class="hero-title">
+            <span class="title-line">Découvrez</span>
+            <span class="title-highlight">Valmont</span>
+          </h1>
+          <div class="glass-card float-anim-1">
+            <p>Savoir-faire espagnol, embouteillé avec fierté au Bénin.</p>
+          </div>
+          <div class="glass-card float-anim-2">
+            <p>Tanins affirmés. Format 50cl pratique et décapsulable.</p>
+          </div>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-start;">
+            <a href="https://www.sobebra.bj/devenir-fournisseurs/" class="hero-cta">Devenir distributeur <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a href="./prototype_sobebra_la-distribution.html" class="hero-cta" style="background: transparent; border: 2px solid #FFFFFF; color: #FFFFFF;">Contacter un distributeur <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="product-glow"></div>
+          <img src="https://www.sobebra.bj/app/uploads/2025/07/Accueil-220x688px-Valmont-1.png" alt="Bouteille de Vin Valmont 50cl" class="hero-bottle">
+        </div>
+      </div>
+    </section>
+  <!-- ==========================================
+       CONTENU PRINCIPAL : LA DISTRIBUTION
+       ========================================== -->
+  <main class="distribution-page">
+    <div class="container distribution-layout">
+      
+      <!-- BARRE LATÉRALE (Sidebar) -->
+      <aside class="dist-sidebar" data-aos="fade-right">
+        <div class="sidebar-block">
+          <h4>Recherche rapide</h4>
+          <form role="search" method="get" class="sidebar-search-form" action="https://www.sobebra.bj/">
+            <input type="text" class="search-field" value="" name="s" placeholder="Mot-clé...">
+            <button type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </button>
+          </form>
+        </div>
+
+        <div class="sidebar-block">
+          <h4>Nos Produits</h4>
+          <ul class="sidebar-links">
+            <li><a href="https://sobebra.bj/nos-produits/?cat=nos-bieres">Nos bières</a></li>
+            <li><a href="/nos-produits/?cat=les-boissons-gazeuses">Les Boissons Gazeuses</a></li>
+            <li><a href="/nos-produits/?cat=les-eaux">Les Eaux</a></li>
+            <li><a href="/nos-produits/?cat=les-boissons-energisantes">Les Boissons énergisantes</a></li>
+            <li><a href="/nos-produits/?cat=nos-panaches">Nos boissons panachées</a></li>
+            <li><a href="/nos-produits/?cat=nos-alcool-mix">Nos Alcools Mix</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-block">
+          <h4>La Sobebra</h4>
+          <ul class="sidebar-links">
+            <li><a href="/notre-histoire/">Notre histoire</a></li>
+            <li><a href="/la-distribution/" class="active">Nos distributeurs</a></li>
+            <li><a href="/carrieres/">Postuler</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-block">
+          <h4>Suivez-nous</h4>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/sobebrabenin/" target="_blank" aria-label="Facebook"><img src="https://www.sobebra.bj/app/uploads/2025/02/face-tool.png" alt="FB"></a>
+            <a href="https://www.instagram.com/sobebrabenin/" target="_blank" aria-label="Instagram"><img src="https://www.sobebra.bj/app/uploads/2025/02/instagram-tool.png" alt="IG"></a>
+            <a href="https://www.linkedin.com/company/11031043" target="_blank" aria-label="LinkedIn"><img src="https://www.sobebra.bj/app/uploads/2025/02/linkedin-tool.png" alt="LI"></a>
+            <a href="https://x.com/SobebraBJ" target="_blank" aria-label="X"><img src="https://www.sobebra.bj/app/uploads/2025/02/twitter-square-tool.png" alt="X"></a>
+            <a href="https://www.youtube.com/channel/UCGvPflnyxSLlW8lARuYMXUQ" target="_blank" aria-label="YouTube"><img src="https://www.sobebra.bj/app/uploads/2025/02/youtube-square-tool.png" alt="YT"></a>
+          </div>
+        </div>
+      </aside>
+
+<!-- CONTENU PRINCIPAL (Tableau) -->
+<section class="dist-main" data-aos="fade-left">
+  <div class="dist-header">
+    <h1>Notre Réseau de Distribution</h1>
+    <p class="dist-intro">Pour assurer la disponibilité de ses produits sur toute l’étendue du territoire béninois, la SOBEBRA s'appuie sur un réseau de distributeurs agréés de confiance.</p>
+  </div>
+
+  <!-- Le plugin tableManager.js va automatiquement injecter les contrôles et la pagination ici -->
+  <div class="table-responsive-wrapper">
+    <table class="tablemanager modern-table">
+      <thead>
+        <tr>
+          <th class="sortingAsc disableFilterBy sorterHeader">N°</th>
+          <th class="sorterHeader">Nom du Client / Distributeur</th>
+          <th class="sorterHeader">Localisation</th>
+          <th class="sorterHeader">Téléphone</th>
+          <th class="sorterHeader">Région</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="prova">01</td><td class="prova">STE H&amp;J GROUP SARL <span class="just-for-search">AKPAKPA/TANKPE/GLAZOUE/PARAKOU/BASSILA/GOGOUNOU 0197266749 COTONOU 1</span></td><td class="prova">AKPAKPA/TANKPE/GLAZOUE/PARAKOU/BASSILA/GOGOUNOU</td><td class="prova">0197266749</td><td class="prova"><span class="region-badge">COTONOU 1</span></td></tr>
+        <tr><td class="prova">02</td><td class="prova">BERCEAU DES INTIMES <span class="just-for-search">GBEGAMEY/CALAVI/PARAKOU 0162627879 COTONOU 1</span></td><td class="prova">GBEGAMEY/CALAVI/PARAKOU</td><td class="prova">0162627879</td><td class="prova"><span class="region-badge">COTONOU 1</span></td></tr>
+        <tr><td class="prova">03</td><td class="prova">SFL GLOIRE DIVINE <span class="just-for-search">FIDJROSSE/TORI/HEVIE/DJOUGOU 0197611389 COTONOU 2</span></td><td class="prova">FIDJROSSE/TORI/HEVIE/DJOUGOU</td><td class="prova">0197611389</td><td class="prova"><span class="region-badge">COTONOU 2</span></td></tr>
+        <tr><td class="prova">04</td><td class="prova">AKPEEDJE CONSULTING SARL <span class="just-for-search">ST MICHEL 0196963057 COTONOU 2</span></td><td class="prova">ST MICHEL</td><td class="prova">0196963057</td><td class="prova"><span class="region-badge">COTONOU 2</span></td></tr>
+        <tr><td class="prova">05</td><td class="prova">GLOBAL FAST DISTRIBUTION <span class="just-for-search">GBEGBANOU 0166373885 COTONOU 2</span></td><td class="prova">GBEGBANOU</td><td class="prova">0166373885</td><td class="prova"><span class="region-badge">COTONOU 2</span></td></tr>
+        <tr><td class="prova">06</td><td class="prova">MA MU GOD WIN <span class="just-for-search">GBEGBANOU 0197482081 COTONOU 2</span></td><td class="prova">GBEGBANOU</td><td class="prova">0197482081</td><td class="prova"><span class="region-badge">COTONOU 2</span></td></tr>
+        <tr><td class="prova">07</td><td class="prova">MAHUKPEGO SEMACO <span class="just-for-search">COTONOU 0197689361 COTONOU 2</span></td><td class="prova">COTONOU</td><td class="prova">0197689361</td><td class="prova"><span class="region-badge">COTONOU 2</span></td></tr>
+        <tr><td class="prova">08</td><td class="prova">DIEU CONTRÔLE TOUT <span class="just-for-search">CALAVI/AKASSATO/NATITINGOU 0197386403 CALAVI 1</span></td><td class="prova">CALAVI/AKASSATO/NATITINGOU</td><td class="prova">0197386403</td><td class="prova"><span class="region-badge">CALAVI 1</span></td></tr>
+        <tr><td class="prova">09</td><td class="prova">LA FOI DISTRIBUTION <span class="just-for-search">MISSESSINTO/TANGUIETA 0167010548 CALAVI 1</span></td><td class="prova">MISSESSINTO/TANGUIETA</td><td class="prova">0167010548</td><td class="prova"><span class="region-badge">CALAVI 1</span></td></tr>
+        <tr><td class="prova">10</td><td class="prova">IRE COMPANY <span class="just-for-search">GBETAGBO/TOGBA/AGLA/PARAKOU 0198505050 CALAVI 1</span></td><td class="prova">GBETAGBO/TOGBA/AGLA/PARAKOU</td><td class="prova">0198505050</td><td class="prova"><span class="region-badge">CALAVI 1</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="sr-footer-menu">
+      <div class="container content-footer-menu">
+        <div class="sr-footer-logo">
+          <img src="https://www.sobebra.bj/app/uploads/2025/02/logo-footer.png" alt="SOBEBRA Footer">
+          <div class="notification">
+            Depuis 1960<br>Le Groupe CASTEL<br>Partenaires et Fournisseurs
+          </div>
+        </div>
+        <div class="sr-footer-links">
+          <div class="sr-box-links">
+            <h5>Nos Produits</h5>
+            <ul>
+              <li><a href="https://www.sobebra.bj/nos-produits/?cat=nos-bieres">Nos bières</a></li>
+              <li><a href="https://www.sobebra.bj/nos-produits/?cat=les-boissons-gazeuses">Nos boissons gazeuses</a></li>
+              <li><a href="https://www.sobebra.bj/nos-produits/?cat=les-eaux">Nos eaux</a></li>
+              <li><a href="https://www.sobebra.bj/nos-produits/?cat=les-boissons-energisantes">Nos boissons énergisantes</a></li>
+              <li><a href="https://www.sobebra.bj/nos-produits/?cat=nos-alcool-mix">Nos alcools mix</a></li>
+              <li><a href="https://www.sobebra.bj/nos-produits/?cat=nos-panaches">Nos boissons panachées</a></li>
+            </ul>
+          </div>
+          <div class="sr-box-links">
+            <h5>Nous Écrire</h5>
+            <ul>
+              <li><a href="https://www.sobebra.bj/faq/">Foire aux questions</a></li>
+              <li><a href="https://www.sobebra.bj/pourquoi-nous-rejoindre/">Pourquoi nous rejoindre ?</a></li>
+              <li><a href="https://www.sobebra.bj/carrieres/">Offres d’emplois</a></li>
+              <li><a rel="privacy-policy" href="https://www.sobebra.bj/mentions-legales/">Mentions légales</a></li>
+              <li><a href="https://www.sobebra.bj/politique-de-protection-des-donnees-personnelles/">Politique de protection des données personnelles</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sr-footer-copyright">
+      <div class="container">
+        <div class="content-copyright">
+          <div class="copyright">
+            <p>Copyright 2025. Tous Droits Réservés - Powered by iCube</p>
+          </div>
+          <div class="company">
+            <p>Nos heures de travail : Lundi au Vendredi, 8:00 à 12:30 et 14h à 17h30</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://www.sobebra.bj/wp/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://www.sobebra.bj/app/themes/sob/static_assets/scripts/tableManager.js"></script>
+  <script src="https://www.sobebra.bj/app/themes/sob/static_assets/scripts/main.js"></script>
+  
+  <script>
+    // Initialisation des animations au scroll
+    AOS.init({ once: true, duration: 800 });
+  </script>
+</body>
+</html>
